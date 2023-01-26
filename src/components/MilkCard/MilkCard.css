@@ -1,0 +1,40 @@
+.MilkCard {
+    /* max-width: 18rem; */
+    height: 33rem;
+    width: 33rem;
+    /* padding: 0.6rem 0.3rem; */
+    background-color: var(--background-color-light);
+    border-radius: 20px;
+    box-shadow: 8px 6px 12px 6px rgba(0, 0, 0, 0.2);
+    color: #242424;
+    transition: box-shadow 0.1s, transform 0.1s;
+}
+
+.MilkCard:hover {
+    box-shadow: 4px 3px 3px 3px var(--primary-color);
+    cursor: pointer;
+}
+
+.MilkCard:active {
+    box-shadow: 0 0 15px 7px rgba(0, 0, 0, 0.3);
+    transform: scale(0.98);
+}
+
+.MilkCard__info {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: space-between;
+    padding: 0.25rem 0.5rem 1rem;
+    gap: 0.5rem;
+}
+
+.MilkCard__imagediv {
+    padding: 1rem;
+    height: 12rem;
+    background-color: var(--subtle-detail-color);
+}
+
+.MilkCard__image {
+    height: 100%;
+}

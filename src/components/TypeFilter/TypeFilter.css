@@ -1,0 +1,94 @@
+
+.TypeFilter__Container {
+    width: 16rem;
+    height: fit-content;
+    position: fixed;
+    /* top: 8vh; */
+    top: 11vh;
+    right: 1vw;
+    padding: 0.25rem 0.2rem 0.4rem;
+    /* background-color: var(--primary-color); */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 200;
+    background-color: var(--primary-color);
+}
+
+.TypeFilter__TopToggler {
+    transition: transform 0.1s;
+    border: 1px solid black;
+    height: 4rem;
+    width: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255,255,255,0.4);
+    box-shadow: 4px 2px 4px 1px rgba(0,0,0,0.25);
+}
+
+.TypeFilter__TopToggler:hover {
+    cursor: pointer;
+    transform: scale(1.04);
+    background-color: rgba(255,255,255,0.2);
+    box-shadow: 0 0rem 0.6rem rgba(0,0,0,0.4);
+    
+}
+
+.TypeFilter__Dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.2rem;
+    color: var(--font-color-dark);
+    background-color: rgba(255,255,255,0.67);
+    backdrop-filter: blur(7px);
+    /* border-radius: 1.6rem; */
+    padding: 2px 5px;
+    width: 90%;
+}
+
+.TypeFilter__Dropdown--Hidden {
+    display: none;
+}
+
+.TypeFilter__TypeSpan {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap:2ch;
+    width:100%;
+}
+
+.TypeFilter__TypeSpan:hover {
+    cursor: pointer;
+    text-shadow: 0 0 3px var(--primary-color)
+}
+
+.TypeFilter__TypeYesBox {
+    width: 1rem;
+    height: 1rem;
+    background-color: rgb(27, 7, 7);
+    box-shadow: 0 0 8px 2px rgb(27, 7, 7,0.5);
+    border-radius: 100rem;
+}
+
+.TypeFilter__TypeYesBox--Yes {
+    background-color: green;
+    box-shadow: 0 0 10px 3px rgba(0, 128, 0, 0.5);
+}
+
+.TypeFilter__Type {
+    font-size: 1.2rem;
+    text-align: right;
+    font-weight: 300;
+}
+
+.TypeFilter__Type--Yes {
+    text-decoration: none;
+    font-weight: 600;
+}
