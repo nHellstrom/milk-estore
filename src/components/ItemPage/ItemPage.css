@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 6rem;
+    align-items: center;
     /* background-color: blue; */
 }
 
@@ -46,4 +47,10 @@
     align-items: center;
     justify-content: space-around;
     padding:2rem;
+}
+
+.ItemPage__productadded {
+    width: 28rem;
+    background-color: antiquewhite;
+    box-shadow: 0 0 10px 8px rgba(0,0,0,0.2);
 }

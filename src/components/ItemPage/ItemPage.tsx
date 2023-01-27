@@ -10,6 +10,7 @@ const ItemPage = () => {
     const params = useParams();
     const [product, setProduct] = useState<IMilk | undefined>(undefined);
     const [qty, setQty] = useState<number>(1);
+    const [ordered, setOrdered] = useState<boolean>(false);
 
     const fetchProductFromAPI = async () => {
         try {
@@ -17,7 +18,7 @@ const ItemPage = () => {
             const apiAddress = `http://localhost:5134/api/Product/${params.productid}`;
             const response = await fetch(apiAddress);
             const data = await response.json();
-            console.log(data)
+            // console.log(data)
             setProduct(data);
             // setSearchResults(data)
         }
@@ -25,6 +26,34 @@ const ItemPage = () => {
             // setConnectionWorking(false);
             console.error("Could not resolve API fetch ☹️ ", e)
         }
+    }
+
+    const updateQtyOnAPI = async () => {
+        try {
+            const apiAddress = `http://localhost:5134/api/Product/Order/${params.productid}`;
+            console.log(apiAddress);
+            // const response = await fetch(apiAddress);
+            const response = await fetch(apiAddress, 
+                {
+                method: "PATCH",
+                headers: {
+                    'Content-Type': 'application/json; charset=utf-8 '
+                  },
+                body: JSON.stringify(qty),
+            });
+            const data = await response.json();
+            console.log(data);
+            fetchProductFromAPI();
+        }
+        catch(e) {
+            // setConnectionWorking(false);
+            console.error("Could not update API  ☹️ ", e)
+        }
+    }
+
+    const productAdded = () => {
+        updateQtyOnAPI();
+        setOrdered(true);
     }
 
     useEffect(() => {
@@ -38,15 +67,19 @@ const ItemPage = () => {
         
         <div className="ItemPage__product">
             <img className="ItemPage__image" src={defaultImage} alt="Image of milk product"/>
-            <div className="ItemPage__orderinfo">
+            <div className="ItemPage__orderinfo" id={"ItemPage__orderinfoId"}>
                 <h3>{product?.name}</h3>
                 <i>{product?.type}</i>
                 <i>{product?.storage} liters left</i>
-                <input type="range" id="qty" name="qty" min="1" max={product?.storage} value={qty} onChange={(e) => setQty(parseInt(e.target.value))}/>
+                <input type="range" id="qty" name="qty" min="1" max={product?.storage} value={qty} onChange={(e) => !ordered && setQty(parseInt(e.target.value))}/>
                 <span>{qty} liters selected</span>
-                <button>Order</button>
+                <button onClick={() => !ordered && productAdded()}>Order</button>
             </div>
         </div>
+            {ordered && <div className={"ItemPage__productadded"}>
+                <h3>Product added to cart!</h3>
+                <p>{qty} liters of {product?.name} has been added to the cart!</p>
+            </div>}
     </article>
 }
 

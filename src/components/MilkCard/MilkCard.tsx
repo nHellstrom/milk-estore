@@ -14,7 +14,7 @@ const MilkCard = (product : IProduct) => {
         <div className="MilkCard__info">
             <h3 className="MilkCard__title">{product.product.name}</h3>
             <span className="MilkCard__type"><i>Type: </i><br/>{product.product.type}</span>
-            <span className="MilkCard__quantity"><i>Stock: </i><br/>{product.product.storage}</span>
+            <span className="MilkCard__quantity"><i>Stock: </i><br/>{product.product.storage} liters</span>
         </div>
     </article>
 }
