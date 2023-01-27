@@ -7,8 +7,8 @@
 }
 
 .ItemPage__backbutton {
-    background-color: var(--secondary-color);
-    box-shadow: 3px 2px 2px 2px rgba(0,0,0,0.2);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 3px 2px 4px 2px rgba(0,0,0,0.2);
     width: fit-content;
     padding: 1rem;
     border: 0;
@@ -18,7 +18,7 @@
 .ItemPage__backbutton:hover {
     cursor: pointer;
     transform: scale(1.1);
-    box-shadow: 2px 1px 10px 6px rgba(0,0,0,0.05);
+    box-shadow: 2px 1px 6px 4px rgba(0,0,0,0.05);
 }
 
 .ItemPage__backbutton:active {

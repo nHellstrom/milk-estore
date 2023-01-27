@@ -1,10 +1,10 @@
-import React, { createContext, useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css'
 import ProductSection from './components/ProductSection/ProductSection';
 import ItemPage from './components/ItemPage/ItemPage';
 import { MerchandiseContextProvider } from './MerchandiseContext';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import { IMilk, IProduct } from './interfaces';
+import { IMilk } from './interfaces';
 
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
 
         <header className="App__header">
           <Link className="App__headertitle" to={"/"}>
-            <h1 >The Milk Store</h1>
+            <h1 >Auðumbla E-Store</h1>
           </Link>
         </header>
 

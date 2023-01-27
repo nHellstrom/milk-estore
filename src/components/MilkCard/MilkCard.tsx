@@ -4,9 +4,6 @@ import defaultImage from "../../assets/milk.png";
 import "./MilkCard.css"
 
 const MilkCard = (product : IProduct) => {
-
-    // const imageUrl = "../../assets/milk.png";
-
     return <article className="MilkCard">
         <div className="MilkCard__imagediv">
             <img className="MilkCard__image" src={defaultImage} alt="Image of milk product"/>

@@ -9,7 +9,7 @@ import "./ItemPage.css";
 const ItemPage = () => {
     const params = useParams();
     const [product, setProduct] = useState<IMilk | undefined>(undefined);
-    const [qty, setQty] = useState<number>(1);
+    const [qty, setQty] = useState<number>(0);
     const [ordered, setOrdered] = useState<boolean>(false);
 
     const fetchProductFromAPI = async () => {
@@ -18,12 +18,9 @@ const ItemPage = () => {
             const apiAddress = `http://localhost:5134/api/Product/${params.productid}`;
             const response = await fetch(apiAddress);
             const data = await response.json();
-            // console.log(data)
             setProduct(data);
-            // setSearchResults(data)
         }
         catch(e) {
-            // setConnectionWorking(false);
             console.error("Could not resolve API fetch ☹️ ", e)
         }
     }
@@ -32,7 +29,6 @@ const ItemPage = () => {
         try {
             const apiAddress = `http://localhost:5134/api/Product/Order/${params.productid}`;
             console.log(apiAddress);
-            // const response = await fetch(apiAddress);
             const response = await fetch(apiAddress, 
                 {
                 method: "PATCH",
@@ -46,7 +42,6 @@ const ItemPage = () => {
             fetchProductFromAPI();
         }
         catch(e) {
-            // setConnectionWorking(false);
             console.error("Could not update API  ☹️ ", e)
         }
     }
