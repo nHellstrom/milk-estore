@@ -19,7 +19,6 @@ function App() {
         setMerchandise(data);
     }
     catch(e) {
-        // setConnectionWorking(false);
         console.error("Could not resolve API fetch ☹️ ", e)
     }
   }

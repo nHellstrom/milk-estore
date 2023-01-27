@@ -35,7 +35,6 @@ interface IProps {
                         className="TypeFilter__TypeSpan" 
                         key={type}
                         onClick={ 
-                            // () => shownTypes?.includes(type) && setShownTypes(shownTypes?.filter(el => el !== type))
                             () => handleTypeToggle(type)
                         }>
                         <div className={`TypeFilter__TypeYesBox ${shownTypes?.includes(type) && "TypeFilter__TypeYesBox--Yes"} `}> </div>

@@ -20,11 +20,6 @@ const ProductSection = () => {
                 allTypes.push(prod.type);
             }
         }
-        // for (let i = 0; i < allProducts!.length; i++) {
-        //     if (!allTypes.includes(allProducts![i].type)) {
-        //         allTypes.push(allProducts![i].type);
-        //     }
-        // }
         if (shownTypes == undefined ) {
             setShownTypes(allTypes);
             console.log("Initial types shown: ", allTypes);
@@ -32,19 +27,6 @@ const ProductSection = () => {
     } else {
         console.error("Error in ProductSection: Could not read any product types: ", allProducts)
     }
-
-    // const fetchMerchandiseFromAPI = async () => {
-    //     try {
-    //         const apiAddress = "http://localhost:5134/api/Product";
-    //         const response = await fetch(apiAddress);
-    //         const data = await response.json();
-    //         console.log(data)
-    //     }
-    //     catch(e) {
-    //         // setConnectionWorking(false);
-    //         console.error("Could not resolve API fetch ☹️ ", e)
-    //     }
-    // }
 
     const resetShownTypes = () => {
         setShownTypes(allTypes);
@@ -64,8 +46,6 @@ const ProductSection = () => {
         setShownProducts(result);
 
     }
-
-    
 
     useEffect(() => {
         renderSelection();

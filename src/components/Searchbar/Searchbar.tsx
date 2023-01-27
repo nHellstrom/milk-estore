@@ -11,7 +11,6 @@ const Searchbar = ({setSearchterm, resetShownTypes} : ISearchbar) => {
     const input = document.getElementById("searchInput")
 
     const searchAction = () => {
-        // resetShownTypes();
         setSearchterm(searchtermState);
     }
 
