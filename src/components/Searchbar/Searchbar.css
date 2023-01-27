@@ -1,3 +1,15 @@
 .Searchbar{
     margin: 3rem;
 }
+
+.Searchbar__label {}
+.Searchbar__input {
+    padding: 0.4rem;
+    margin:1rem;
+}
+.Searchbar__button {
+    padding: 0.67rem 1.3rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    box-shadow: 2px 1px 2px 1px rgba(0,0,0,0.2);
+}

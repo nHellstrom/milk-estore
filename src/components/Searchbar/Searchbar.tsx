@@ -17,8 +17,7 @@ const Searchbar = ({setSearchterm, resetShownTypes} : ISearchbar) => {
 
     input?.addEventListener("keypress", function(e) {
         if (e.key === "Enter") {
-        //   e.preventDefault();
-          document.getElementById("searchButton")?.click();
+            searchAction();
         }
       });
 

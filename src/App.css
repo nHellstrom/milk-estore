@@ -16,6 +16,8 @@
 
 html {
   font-size: 62.5%;
+  background: rgb(255,244,244);
+  background: linear-gradient(85deg, rgba(255,244,244,1) 0%, rgba(255,255,255,1) 35%, rgba(167,240,255,1) 100%); 
 }
 
 
